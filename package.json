@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
+    "test:ci": "cucumber-js --format allure-cucumberjs/reporter --format-options \"{\\\"resultsDir\\\":\\\"allure-results\\\"}\"",
     "test:headed": "cross-env HEADLESS=false cucumber-js",
     "test:chrome": "cross-env BROWSER=chromium cucumber-js",
     "test:chrome:headed": "cross-env BROWSER=chromium HEADLESS=false cucumber-js",

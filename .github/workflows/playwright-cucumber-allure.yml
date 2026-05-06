@@ -36,7 +36,7 @@ jobs:
         run: |
           set +e
           rm -rf allure-results allure-report reports
-          npm test
+          npm run test:ci
           status=$?
           if [ ! -d allure-results ]; then
             echo "::error::allure-results was not created. The Allure formatter did not write result files."
