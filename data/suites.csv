@@ -1,0 +1,13 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"As a Sauce Demo customer
+  I want to complete checkout
+  So that I can place an order","744","Checkout process","","2026-05-06","passed","2026-05-06","","","",""
+"As a Sauce Demo customer
+  I want to add products to my cart
+  So that I can review them before checkout","860","Add product to cart","","2026-05-06","passed","2026-05-06","","","",""
+"As a Sauce Demo customer
+  I want to sign in with my credentials
+  So that I can access the product catalog","509","Invalid login","","2026-05-06","passed","2026-05-06","","","",""
+"As a Sauce Demo customer
+  I want to sign in with my credentials
+  So that I can access the product catalog","590","Valid login","","2026-05-06","passed","2026-05-06","","","",""
