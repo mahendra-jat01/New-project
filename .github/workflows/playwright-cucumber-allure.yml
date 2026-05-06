@@ -35,12 +35,8 @@ jobs:
         shell: bash
         run: |
           set +e
-          npx cucumber-js \
-            --format html:reports/cucumber-report.html \
-            --format json:reports/cucumber-report.json \
-            --format allure-cucumberjs/reporter \
-            --format summary \
-            --format-options '{"resultsDir":"allure-results"}'
+          rm -rf allure-results allure-report reports
+          npm test
           status=$?
           if [ ! -d allure-results ]; then
             echo "::error::allure-results was not created. The Allure formatter did not write result files."
