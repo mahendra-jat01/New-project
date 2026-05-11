@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mandi-green: #00b37e;
+  --mandi-orange: #ff8a3d;
+  --mandi-pine: #0f3f33;
+  --mandi-beige: #f7f1e7;
+  --mandi-cream: #fffcf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Manrope, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--mandi-cream);
+}
+
+img {
+  display: block;
+}
+
+.section-wrap {
+  @apply mx-auto max-w-7xl px-4 py-20 sm:px-6;
+}
+
+.nav-link {
+  @apply transition hover:text-mandi;
+}
+
+.icon-button {
+  @apply grid h-10 w-10 place-items-center rounded-full border border-[#d6ece3] bg-white text-pine transition hover:border-mandi hover:bg-[#effaf5] hover:text-mandi;
+}
+
+.hero-chip {
+  @apply inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white;
+}
+
+.hero-button {
+  @apply inline-flex items-center gap-2 rounded-full bg-mandi px-8 py-4 text-sm font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#0b6f52];
+}
+
+.trust-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-[#c7e6db] bg-white px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-[#31584d];
+}
+
+.category-card {
+  @apply overflow-hidden rounded-3xl border border-[#d6ece3] bg-white text-pine shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft;
+}
+
+.workflow-card {
+  @apply rounded-3xl border border-[#d6e6dc] bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-soft;
+}
+
+.filter-pill {
+  @apply rounded-full bg-[#ebf8f3] px-4 py-2 text-sm font-extrabold text-[#396054] transition hover:bg-mandi hover:text-white;
+}
+
+.filter-pill.active {
+  @apply bg-pine text-white;
+}
+
+.product-card {
+  @apply overflow-hidden rounded-3xl border border-[#d6ece3] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft;
+}
+
+.add-cart-button {
+  @apply inline-flex min-h-11 items-center gap-2 rounded-full bg-pine px-5 text-sm font-extrabold text-white transition hover:bg-mandi;
+}
+
+.qty-button {
+  @apply grid h-8 w-8 place-items-center rounded-full bg-white text-mandi shadow-sm transition hover:bg-mandi hover:text-white;
+}
+
+.payment-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-[#cde8dd] bg-[#f6fcf9] px-3 py-1.5 text-xs font-extrabold text-[#356153] transition hover:bg-[#e9f8f2];
+}
+
+.payment-pill.active {
+  @apply border-mandi bg-mandi text-white;
+}
+
+.testimonial-card {
+  @apply rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm;
+}
+
+.footer-title {
+  @apply text-sm font-extrabold uppercase tracking-[0.2em] text-[#90c7b8];
+}
+
+.footer-links {
+  @apply mt-4 grid gap-2 text-sm font-semibold text-white/80;
+}
+
+.footer-badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-extrabold text-white;
+}
+
+.payment-chip {
+  @apply rounded-full bg-white/10 px-3 py-1 text-white/85;
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 86vh;
+  }
+}
