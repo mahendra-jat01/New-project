@@ -4,7 +4,7 @@ class BasePage {
   }
 
   async goto(path = "/") {
-    await this.page.goto(path);
+    await this.page.goto(path, { waitUntil: "domcontentloaded" });
   }
 
   async click(locator) {
@@ -13,10 +13,6 @@ class BasePage {
 
   async fill(locator, value) {
     await locator.fill(value);
-  }
-
-  async getText(locator) {
-    return locator.textContent();
   }
 }
 

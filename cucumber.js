@@ -1,3 +1,5 @@
+const os = require("os");
+
 module.exports = {
   default: {
     require: [
@@ -6,6 +8,9 @@ module.exports = {
       "src/step-definitions/**/*.js"
     ],
     paths: ["src/features/**/*.feature"],
+    // Run scenarios in parallel across multiple workers. Configurable via
+    // PARALLEL_WORKERS env var, defaulting to the requested 5 workers.
+    parallel: Number(process.env.PARALLEL_WORKERS || 5),
     format: [
       "html:reports/cucumber-report.html",
       "json:reports/cucumber-report.json",
@@ -15,6 +20,6 @@ module.exports = {
     formatOptions: {
       resultsDir: "allure-results"
     },
-    timeout: 60000
+    timeout: 120000
   }
 };

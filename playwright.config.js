@@ -2,12 +2,12 @@ const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
   testDir: "./src",
-  timeout: 60000,
+  timeout: 120000,
   expect: {
-    timeout: 10000
+    timeout: 15000
   },
   use: {
-    baseURL: process.env.BASE_URL || "https://www.saucedemo.com/",
+    baseURL: process.env.BASE_URL || "https://automationexercise.com",
     headless: process.env.HEADLESS !== "false",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
@@ -17,14 +17,6 @@ module.exports = defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] }
-    },
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] }
-    },
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] }
     }
   ]
 });

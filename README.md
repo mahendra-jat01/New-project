@@ -67,6 +67,28 @@ Run all tests in headless Chromium:
 npm test
 ```
 
+Run the Cucumber BDD suite and write Allure result files:
+
+```bash
+npm run test:ci
+```
+
+Generated test cases should be added to `src/features/*.feature` with matching step definitions under
+`src/step-definitions`. Standalone Playwright specs under `src/tests` are treated as legacy/manual Playwright tests and
+are not included in the Allure Cucumber report.
+
+Run legacy/manual Playwright specs only:
+
+```bash
+npm run test:playwright
+```
+
+Run both BDD and legacy/manual Playwright specs:
+
+```bash
+npm run test:all
+```
+
 Run with a visible browser:
 
 ```bash
@@ -91,6 +113,7 @@ npm run test:webkit
 Generate the report after a test run:
 
 ```bash
+npm run test:ci
 npm run allure:generate
 ```
 
@@ -159,3 +182,27 @@ HEADLESS=true
 SLOW_MO=0
 DEFAULT_TIMEOUT=10000
 ```
+
+## AI-assisted testing
+
+The framework includes a provider-neutral AI layer for GitHub Models (Copilot-backed access), OpenAI, xAI Grok,
+and Anthropic. Credentials are read only from environment variables; never commit `.env` or API keys.
+
+1. Copy `.env.example` to `.env` and set `AI_PROVIDER` plus the matching provider key.
+2. Generate a Cucumber feature from a plain-English request:
+
+```bash
+npm run ai:generate -- "verify a user can filter products by price"
+```
+
+The generated feature is saved to `src/features/ai-generated.feature` for review before it is executed.
+
+Analyze the latest Cucumber JSON report:
+
+```bash
+npm run test:cucumber
+npm run ai:analyze
+```
+
+To attach an AI explanation to failed scenarios during a run, set `AI_ANALYZE_FAILURES=true`. Supported values for
+`AI_PROVIDER` are `github`, `openai`, `grok`, and `anthropic`; `AI_MODEL` can override the provider default.
